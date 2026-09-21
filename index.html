@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Servizi</title>
     <style>
-        @import url('https://googleapis.com');
+        /* ==========================================
+           1. STILE DELLA PRIMA SEZIONE: HEADER
+           ========================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
         .wow-header-wrapper *{box-sizing:border-box}
         .wow-header-wrapper{
           position:sticky; top:0; z-index:100;
@@ -66,10 +69,166 @@
           .wow-header-links{display:none}
           .wow-header-name{font-size:9px; letter-spacing:0.14em}
         }
+
+        /* ==========================================
+           2. STILE DELLA SECONDA SEZIONE: HERO
+           ========================================== */
+        .wow-hero-wrapper *{box-sizing:border-box}
+        .wow-hero-wrapper{
+          position:relative; overflow:hidden;
+          background:#fdfcfa; width:100%;
+        }
+        .wow-hero-bg{
+          position:absolute; inset:0; z-index:0; pointer-events:none;
+        }
+        .wow-hero-bg-img{
+          width:100%; height:100%; object-fit:cover;
+          opacity:0.12; display:block;
+        }
+        .wow-hero-bg-overlay{
+          position:absolute; inset:0;
+          background:rgba(253,252,250,0.82);
+        }
+        .wow-hero-inner{
+          position:relative; z-index:10;
+          max-width:1320px; margin:0 auto;
+          padding:72px 24px 48px; text-align:left;
+        }
+        .wow-hero-badge{
+          display:inline-flex; align-items:center; gap:8px;
+          padding:6px 16px; border-radius:999px;
+          border:1px solid rgba(141,163,153,0.33);
+          background:rgba(255,255,255,0.7);
+          font-family:'Inter',sans-serif; font-size:10px; font-weight:500;
+          letter-spacing:0.20em; text-transform:uppercase; color:#172133;
+          margin-bottom:28px;
+        }
+        .wow-hero-badge-dot{
+          width:8px; height:8px; border-radius:50%; background:#8DA399; display:inline-block; flex-shrink:0;
+        }
+        .wow-hero-title{
+          margin:0; max-width:880px;
+          font-family:'Instrument Serif',serif;
+          font-size:clamp(42px,6.2vw,78px);
+          line-height:0.88; letter-spacing:-0.03em;
+          font-weight:400; color:#172133; text-align:left;
+        }
+        .wow-hero-title-line2{
+          display:inline-block; position:relative;
+          font-style:italic; font-weight:300;
+        }
+        .wow-hero-title-underline{
+          position:absolute; bottom:-8px; left:0;
+          width:108%; height:6px; opacity:0.6; border-radius:2px;
+          background:linear-gradient(90deg, #8DA399 0%, #A3B18A 55%, transparent 100%);
+        }
+        .wow-hero-subtitle{
+          margin-top:36px; max-width:900px; text-align:left;
+          font-family:'Instrument Serif',serif;
+          font-size:clamp(18px,2.2vw,22px);
+          line-height:1.2; font-weight:400; color:#172133;
+        }
+        @media (max-width:768px){
+          .wow-hero-inner{padding:48px 16px 32px}
+          .wow-hero-title{font-size:clamp(38px,11vw,52px)}
+        }
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
+.wow-folders-wrapper *{box-sizing:border-box}
+.wow-folders-wrapper{
+  display:flex; flex-wrap:wrap; gap:24px;
+  margin-top:56px; justify-content:flex-start; align-items:flex-start;
+  width:100%;
+}
+.wow-folders-folder{
+  position:relative; overflow:hidden;
+  border-radius:18px; border:1.5px solid #e9e1d1; background:#FFFEFB;
+  box-shadow:0 10px 36px rgba(0,0,0,0.06);
+  padding:28px; text-align:left;
+  display:flex; flex-direction:column;
+  cursor:pointer; appearance:none; -webkit-appearance:none;
+  transition:box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  animation:wow-folders-float 4.5s ease-in-out infinite;
+}
+.wow-folders-folder--01{width:220px; height:280px; --r:-2deg}
+.wow-folders-folder--02{width:260px; height:340px; --r:0deg; animation-delay:0.3s}
+.wow-folders-folder--03{width:220px; height:280px; --r:2deg; animation-delay:0.6s}
+
+@keyframes wow-folders-float{
+  0%,100%{transform:translateY(0) rotate(var(--r))}
+  50%{transform:translateY(-12px) rotate(var(--r))}
+}
+.wow-folders-folder:hover{
+  animation:none;
+  transform:translateY(-8px) rotate(var(--r));
+  border-color:#8da399;
+  box-shadow:0 22px 56px rgba(141,163,153,0.22);
+}
+
+.wow-folders-tab{
+  position:absolute; top:-12px; right:28px; z-index:12;
+  width:20px; height:34px; background:#8da399;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%);
+}
+.wow-folders-gold{
+  position:absolute; left:0; top:18px; bottom:18px; z-index:11;
+  width:3px; background:#c6a667; border-radius:999px;
+}
+.wow-folders-bg{
+  position:absolute; inset:0; z-index:0; opacity:0.35;
+}
+.wow-folders-bg img{width:100%; height:100%; object-fit:cover; display:block}
+.wow-folders-overlay{
+  position:absolute; inset:0; z-index:1; background:#fff; opacity:0.6;
+}
+.wow-folders-content{
+  position:relative; z-index:10;
+  display:flex; flex-direction:column; height:100%; width:100%; text-align:left;
+}
+.wow-folders-top{
+  display:flex; justify-content:space-between; align-items:center;
+}
+.wow-folders-badge{
+  font-family:'Inter',sans-serif; font-size:9px; font-weight:700;
+  letter-spacing:0.25em; border:1px solid #A3B18A; background:#fff;
+  padding:2px 8px; border-radius:999px; color:#172133;
+}
+.wow-folders-arrow{
+  width:24px; height:24px; border-radius:50%;
+  border:1px solid rgba(141,163,153,0.33); background:#fff;
+  display:grid; place-items:center;
+  font-family:'Inter',sans-serif; font-size:10px; color:#172133;
+}
+.wow-folders-title{
+  margin-top:28px; text-align:left;
+  font-family:'Instrument Serif',serif; font-size:20px; line-height:0.95;
+  font-weight:700; letter-spacing:-0.02em; color:#172133; text-transform:uppercase;
+}
+.wow-folders-folder--02 .wow-folders-title{font-size:22px}
+.wow-folders-desc{
+  margin-top:12px; text-align:left;
+  font-family:'Inter',sans-serif; font-size:11.5px; line-height:1.45;
+  font-weight:600; color:#172133;
+}
+.wow-folders-footer{
+  margin-top:auto; display:flex; align-items:center; gap:8px;
+  font-family:'Inter',sans-serif; font-size:9px; font-weight:700;
+  letter-spacing:0.18em; text-transform:uppercase; color:#172133;
+}
+.wow-folders-footer-line{
+  width:20px; height:1px; background:#8DA399; display:inline-block;
+}
+@media (max-width:768px){
+  .wow-folders-wrapper{justify-content:center}
+  .wow-folders-folder--01,.wow-folders-folder--02,.wow-folders-folder--03{
+    width:86%; height:320px; --r:0deg;
+  }
+}
     </style>
 </head>
 <body>
 
+    <!-- STRUTTURA HTML 1: HEADER -->
     <header class="wow-header-wrapper">
       <div class="wow-header-inner">
         <a class="wow-header-brand" href="#">
@@ -87,5 +246,77 @@
       </div>
     </header>
 
+    <!-- STRUTTURA HTML 2: HERO SECTION -->
+    <section class="wow-hero-wrapper">
+      <div class="wow-hero-bg">
+        <img class="wow-hero-bg-img" src="https://i.ibb.co/hQj36yv/950289fccfc46014-image-20260919-170824.webp" alt="Luxury Residence Floor Plan">
+        <div class="wow-hero-bg-overlay"></div>
+      </div>
+      <div class="wow-hero-inner">
+        <div class="wow-hero-badge">
+          <span class="wow-hero-badge-dot"></span>
+          METODO CICLO DELL'IMMOBILE
+        </div>
+        <h1 class="wow-hero-title">
+          servizi e guide<br>
+          <span class="wow-hero-title-line2">
+            per categorie
+            <span class="wow-hero-title-underline"></span>
+          </span>
+        </h1>
+        <p class="wow-hero-subtitle">
+          il tuo brand, la tua voce, la mia strategia
+        </p>
+      </div>
+    </section>
+<section class="wow-folders-wrapper">
+  <button type="button" class="wow-folders-folder wow-folders-folder--01" data-folder="01">
+    <span class="wow-folders-tab"></span>
+    <span class="wow-folders-gold"></span>
+    <div class="wow-folders-bg"><img src="https://i.ibb.co/LDc99F9N/5dac748a78b93a31-image-20260919-170835.webp" alt="Costruttori cantiere"></div>
+    <div class="wow-folders-overlay"></div>
+    <div class="wow-folders-content">
+      <div class="wow-folders-top">
+        <span class="wow-folders-badge">01</span>
+        <span class="wow-folders-arrow">↗</span>
+      </div>
+      <h3 class="wow-folders-title">COSTRUTTORI</h3>
+      <p class="wow-folders-desc">Per Costruttori - piani di lancio & vendita su carta</p>
+      <div class="wow-folders-footer"><span class="wow-folders-footer-line"></span>APRI CARTELLA</div>
+    </div>
+  </button>
+
+  <button type="button" class="wow-folders-folder wow-folders-folder--02" data-folder="02">
+    <span class="wow-folders-tab"></span>
+    <span class="wow-folders-gold"></span>
+    <div class="wow-folders-bg"><img src="https://i.ibb.co/5g0bMR8q/9fff258f3c188e5a-image-20260919-170847.webp" alt="Ristrutturazioni cucina"></div>
+    <div class="wow-folders-overlay"></div>
+    <div class="wow-folders-content">
+      <div class="wow-folders-top">
+        <span class="wow-folders-badge">02</span>
+        <span class="wow-folders-arrow">↗</span>
+      </div>
+      <h3 class="wow-folders-title">RISTRUTTURAZIONI</h3>
+      <p class="wow-folders-desc">Per Imprese di Ristrutturazione - sistemi di acquisizione clienti alto-spendenti</p>
+      <div class="wow-folders-footer"><span class="wow-folders-footer-line"></span>APRI CARTELLA</div>
+    </div>
+  </button>
+
+  <button type="button" class="wow-folders-folder wow-folders-folder--03" data-folder="03">
+    <span class="wow-folders-tab"></span>
+    <span class="wow-folders-gold"></span>
+    <div class="wow-folders-bg"><img src="https://i.ibb.co/fzN6m4SQ/669cfcdecd1c1d6c-image-20260919-170859.webp" alt="Immobiliare chiavi"></div>
+    <div class="wow-folders-overlay"></div>
+    <div class="wow-folders-content">
+      <div class="wow-folders-top">
+        <span class="wow-folders-badge">03</span>
+        <span class="wow-folders-arrow">↗</span>
+      </div>
+      <h3 class="wow-folders-title">IMMOBILIARE</h3>
+      <p class="wow-folders-desc">Per Agenti Immobiliari - lead generation locale & brand Restyling</p>
+      <div class="wow-folders-footer"><span class="wow-folders-footer-line"></span>APRI CARTELLA</div>
+    </div>
+  </button>
+</section>
 </body>
 </html>
