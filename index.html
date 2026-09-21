@@ -5,12 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Servizi</title>
     <style>
-        /* Qui dentro Meta AI ti farà incollare tutti i codici <style> */
+        @import url('https://googleapis.com');
+        .wow-header-wrapper *{box-sizing:border-box}
+        .wow-header-wrapper{
+          position:sticky; top:0; z-index:100;
+          width:100%; background:rgba(253,252,250,0.92);
+          backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+          border-bottom:1px solid #e8e2d6;
+        }
+        .wow-header-wrapper::after{
+          content:""; position:absolute; left:0; right:0; bottom:-1px;
+          height:2px; background:linear-gradient(90deg, #c6a667 0%, #8DA399 60%, transparent 100%);
+          opacity:0.6;
+        }
+        .wow-header-inner{
+          max-width:1320px; margin:0 auto;
+          display:flex; align-items:center; justify-content:space-between;
+          padding:14px 24px; gap:16px;
+        }
+        .wow-header-brand{
+          display:flex; align-items:center; gap:10px; text-decoration:none;
+        }
+        .wow-header-ma{
+          width:28px; height:28px; border-radius:999px;
+          border:1px solid #172133; background:#FFFEFB;
+          display:grid; place-items:center;
+          font-family:'Inter',sans-serif; font-size:9px; font-weight:700;
+          letter-spacing:0.05em; color:#172133; flex-shrink:0;
+        }
+        .wow-header-name{
+          font-family:'Inter',sans-serif; font-size:10px; font-weight:600;
+          letter-spacing:0.18em; text-transform:uppercase; color:#172133;
+          line-height:1; white-space:nowrap;
+        }
+        .wow-header-nav{
+          display:flex; align-items:center; gap:22px;
+        }
+        .wow-header-links{
+          display:flex; align-items:center; gap:20px;
+        }
+        .wow-header-link{
+          display:inline-flex; align-items:center; gap:6px;
+          font-family:'Inter',sans-serif; font-size:9px; font-weight:600;
+          letter-spacing:0.20em; text-transform:uppercase; color:#172133;
+          text-decoration:none; opacity:0.9;
+        }
+        .wow-header-link::before{
+          content:""; width:6px; height:6px; border-radius:50%; background:#8DA399; display:inline-block;
+        }
+        .wow-header-cta{
+          display:inline-flex; align-items:center; justify-content:center;
+          padding:7px 14px; border-radius:999px;
+          border:1px solid rgba(23,33,51,0.22); background:#fff;
+          font-family:'Inter',sans-serif; font-size:9px; font-weight:600;
+          letter-spacing:0.16em; text-transform:uppercase; color:#172133;
+          text-decoration:none; white-space:nowrap;
+        }
+        @media (max-width:768px){
+          .wow-header-inner{padding:12px 16px}
+          .wow-header-links{display:none}
+          .wow-header-name{font-size:9px; letter-spacing:0.14em}
+        }
     </style>
 </head>
 <body>
 
-    <!-- Qui sotto incollerai i pezzi HTML uno dopo l'altro -->
+    <header class="wow-header-wrapper">
+      <div class="wow-header-inner">
+        <a class="wow-header-brand" href="#">
+          <span class="wow-header-ma">MA</span>
+          <span class="wow-header-name">martina.aurea – SMM MONDO CASA</span>
+        </a>
+        <nav class="wow-header-nav">
+          <div class="wow-header-links">
+            <a class="wow-header-link" href="#metodo">METODO</a>
+            <a class="wow-header-link" href="#formule">FORMULE</a>
+            <a class="wow-header-link" href="#faq">FAQ</a>
+          </div>
+          <a class="wow-header-cta" href="#contatti">METODO CICLO DELL'IMMOBILE</a>
+        </nav>
+      </div>
+    </header>
 
 </body>
 </html>
