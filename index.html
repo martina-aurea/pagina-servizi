@@ -224,6 +224,120 @@
     width:86%; height:320px; --r:0deg;
   }
 }
+        .wow-drawer-wrapper *{box-sizing:border-box}
+.wow-drawer-backdrop{
+  position:fixed; inset:0; z-index:199;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.wow-drawer-backdrop.wow-drawer-open{opacity:1; visibility:visible; pointer-events:auto}
+.wow-drawer-panel{
+  position:fixed; right:0; top:0; z-index:200;
+  width:100%; max-width:420px; height:100%;
+  background:#fff; border-left:1.5px solid #172133;
+  box-shadow:-16px 0 48px rgba(23,33,51,0.18);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:translateX(100%); transition:transform 0.42s cubic-bezier(0.22,1,0.36,1);
+}
+.wow-drawer-panel.wow-drawer-open{transform:translateX(0)}
+.wow-drawer-topline{height:3px; width:100%; background:linear-gradient(90deg, #8DA399 0%, #c6a667 100%); flex-shrink:0}
+.wow-drawer-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 24px 16px; flex-shrink:0;
+}
+.wow-drawer-label{
+  display:flex; align-items:center; gap:8px;
+  font-family:'Inter',sans-serif; font-size:10px; font-weight:700;
+  letter-spacing:0.22em; text-transform:uppercase; color:#172133;
+}
+.wow-drawer-label::before{
+  content:""; width:7px; height:7px; border-radius:50%; background:#c6a667;
+  box-shadow:0 0 0 4px rgba(141,163,153,0.2); display:inline-block;
+}
+.wow-drawer-close{
+  width:28px; height:28px; border-radius:50%;
+  border:1px solid #172133; background:#fff; color:#172133;
+  display:grid; place-items:center; font-size:14px; cursor:pointer; flex-shrink:0;
+}
+.wow-drawer-scroll{
+  flex:1; overflow-y:auto; padding:0 24px 20px;
+}
+.wow-drawer-title{
+  font-family:'Instrument Serif',serif; font-size:24px; line-height:0.95;
+  font-weight:700; letter-spacing:-0.02em; text-transform:uppercase; color:#172133;
+}
+.wow-drawer-subtitle{
+  margin-top:8px; font-family:'Instrument Serif',serif; font-style:italic;
+  font-size:13px; line-height:1.45; color:#172133; opacity:0.7;
+}
+.wow-drawer-section-label{
+  margin-top:28px; display:flex; align-items:center; gap:8px;
+  font-family:'Inter',sans-serif; font-size:10px; font-weight:600;
+  letter-spacing:0.30em; text-transform:uppercase; color:#8DA399;
+}
+.wow-drawer-section-label::before{content:""; width:16px; height:1px; background:#8DA399; display:inline-block}
+.wow-drawer-list{margin-top:12px; display:grid; gap:12px; list-style:none; padding:0}
+.wow-drawer-list li{
+  display:flex; gap:8px; font-family:'Inter',sans-serif; font-size:13px;
+  line-height:1.6; color:#172133;
+}
+.wow-drawer-list li::before{
+  content:""; width:6px; height:6px; border-radius:50%; background:#8DA399;
+  margin-top:7px; flex-shrink:0; display:inline-block;
+}
+.wow-drawer-nota{
+  margin-top:20px; border-radius:10px; padding:14px; background:#FFFEFB;
+  border:1px solid rgba(23,33,51,0.08); border-left:3px solid #8DA399;
+  box-shadow:-3px 0 0 #c6a667, inset 0 0 0 1px rgba(23,33,51,0.06);
+  font-family:'Instrument Serif',serif; font-style:italic; font-size:12px;
+  line-height:1.6; color:rgba(23,33,51,0.8);
+}
+.wow-drawer-formule{margin-top:18px; display:grid; gap:14px}
+.wow-drawer-card{
+  position:relative; border-radius:12px; padding:16px; background:#fff;
+}
+.wow-drawer-card--consigliata{border:1.5px solid #8DA399}
+.wow-drawer-card--base{border:1px solid rgba(23,33,51,0.18)}
+.wow-drawer-badge{
+  position:absolute; top:-10px; right:12px;
+  padding:3px 10px; border-radius:999px; background:#c6a667; color:#fff;
+  font-family:'Inter',sans-serif; font-size:8px; font-weight:700;
+  letter-spacing:0.18em; text-transform:uppercase;
+}
+.wow-drawer-card-title{
+  font-family:'Inter',sans-serif; font-size:11.5px; font-weight:600; line-height:1.4; color:#172133;
+}
+.wow-drawer-card-desc{
+  margin-top:4px; font-family:'Inter',sans-serif; font-size:12px;
+  line-height:1.55; color:rgba(23,33,51,0.75);
+}
+.wow-drawer-footer{
+  padding:16px 24px 18px; border-top:1px solid #ece6da;
+  background:#FFFEFB; flex-shrink:0; display:grid; gap:10px;
+}
+.wow-drawer-primary{
+  width:100%; border-radius:999px; padding:14px; border:none;
+  background:#172133; color:#fff;
+  font-family:'Inter',sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:0.18em; text-transform:uppercase; cursor:pointer;
+}
+.wow-drawer-secondary{
+  width:100%; border-radius:999px; padding:12px;
+  border:1px solid rgba(23,33,51,0.18); background:#fff; color:#172133;
+  font-family:'Inter',sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:0.18em; text-transform:uppercase; cursor:pointer;
+}
+.wow-drawer-micro{
+  text-align:center; font-family:'Inter',sans-serif; font-size:9px;
+  letter-spacing:0.20em; text-transform:uppercase; opacity:0.4; color:#172133;
+  display:flex; align-items:center; justify-content:center; gap:6px; margin-top:2px;
+}
+.wow-drawer-micro::before{content:""; width:12px; height:1px; background:#8DA399; display:inline-block}
+@media (max-width:768px){
+  .wow-drawer-panel{max-width:100%}
+}
     </style>
 </head>
 <body>
@@ -318,5 +432,83 @@
     </div>
   </button>
 </section>
+<div class="wow-drawer-wrapper">
+  <div class="wow-drawer-backdrop" id="wow-drawer-backdrop-01"></div>
+  <aside class="wow-drawer-panel" id="wow-drawer-01" aria-hidden="true">
+    <div class="wow-drawer-topline"></div>
+    <div class="wow-drawer-header">
+      <span class="wow-drawer-label">COSTRUTTORI 01</span>
+      <button type="button" class="wow-drawer-close" id="wow-drawer-x-01" aria-label="Chiudi">✕</button>
+    </div>
+    <div class="wow-drawer-scroll">
+      <h2 class="wow-drawer-title">PIANI DI LANCIO & VENDITA SU CARTA</h2>
+      <p class="wow-drawer-subtitle">Ottimizzazione flussi di cassa del cantiere trovando acquirenti prima della fine dei lavori.</p>
+      
+      <div class="wow-drawer-section-label">COSA FACCIAMO INSIEME:</div>
+      <ul class="wow-drawer-list">
+        <li>Materiale digitale e inserzioni con campagne geocolizzate: pagine e sponsorizzazioni per portare traffico in target direttamente al tuo ufficio vendite.</li>
+        <li>marketing offline: progettazione commerciale, scelta dei testi, disposizione degli elementi chiave per la cartellonistica, brochure e volantini di cantiere con QR code per sponsorizzazione.</li>
+      </ul>
+
+      <div class="wow-drawer-nota">
+        Nota tecnica – Curo personalmente la direzione strategica e la stesura dei testi orientati alla vendita (copywriting), coordinandomi direttamente con i tuoi grafici di fiducia o con i professionisti del mio network per la perfetta impaginazione e realizzazione tecnica dei file di stampa.
+      </div>
+
+      <div class="wow-drawer-section-label">FORMULE APPLICABILI AL TUO SETTORE:</div>
+      <div class="wow-drawer-formule">
+        <div class="wow-drawer-card wow-drawer-card--consigliata">
+          <span class="wow-drawer-badge">CONSIGLIATA</span>
+          <div class="wow-drawer-card-title">formula "ecosistema online & offline" - (consigliata):</div>
+          <div class="wow-drawer-card-desc">è la soluzione ideale per i costruttori. Un’affiancamento continuo per tutta la durata del cantiere che unisce la gestione delle campagne digitali al marketing fisico sul territorio e al reportage dell’avanzamento lavori. Garantisce una strategia a lungo termine fino alla vendita dell’ultimo lotto.</div>
+        </div>
+        <div class="wow-drawer-card wow-drawer-card--base">
+          <div class="wow-drawer-card-title">formula "gestione completa":</div>
+          <div class="wow-drawer-card-desc">per i costruttori che hanno già una rete di vendita fisica strutturata e necessitano esclusivamente del presidio digitale e della Lead Generation continua mese dopo mese.</div>
+        </div>
+      </div>
+    </div>
+    <div class="wow-drawer-footer">
+      <button type="button" class="wow-drawer-primary">CONFRONTA LE FORMULE</button>
+      <button type="button" class="wow-drawer-secondary" id="wow-drawer-chiudi-01">CHIUDI</button>
+      <div class="wow-drawer-micro">METODO CICLO DELL'IMMOBILE</div>
+    </div>
+  </aside>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  (function(){
+    var backdrop = document.getElementById('wow-drawer-backdrop-01');
+    var panel = document.getElementById('wow-drawer-01');
+    var btnX = document.getElementById('wow-drawer-x-01');
+    var btnChiudi = document.getElementById('wow-drawer-chiudi-01');
+    
+    function openDrawer(){
+      if(backdrop) backdrop.classList.add('wow-drawer-open');
+      if(panel) panel.classList.add('wow-drawer-open');
+      if(panel) panel.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    
+    function closeDrawer(){
+      if(backdrop) backdrop.classList.remove('wow-drawer-open');
+      if(panel) panel.classList.remove('wow-drawer-open');
+      if(panel) panel.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
+    
+    document.querySelectorAll('[data-folder="01"]').forEach(function(el){
+      el.addEventListener('click', openDrawer);
+    });
+    
+    if(backdrop) backdrop.addEventListener('click', closeDrawer);
+    if(btnX) btnX.addEventListener('click', closeDrawer);
+    if(btnChiudi) btnChiudi.addEventListener('click', closeDrawer);
+    
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && panel && panel.classList.contains('wow-drawer-open')) closeDrawer();
+    });
+  })();
+});
+</script>
 </body>
 </html>
