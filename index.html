@@ -79,7 +79,7 @@
           background:#fdfcfa; width:100%;
         }
         .wow-hero-bg{
-          position:absolute; inset:0; z-index:0; pointer-events:none;
+          position:fixed; inset:0; z-index:1; pointer-events:none;
         }
         .wow-hero-bg-img{
           width:100%; height:100%; object-fit:cover;
@@ -349,7 +349,10 @@
     </style>
 </head>
 <body>
-
+ <div class="wow-hero-bg">
+        <img class="wow-hero-bg-img" src="https://i.ibb.co/hQj36yv/950289fccfc46014-image-20260919-170824.webp" alt="Luxury Residence Floor Plan">
+        <div class="wow-hero-bg-overlay"></div>
+      </div>
     <!-- STRUTTURA HTML 1: HEADER -->
     <header class="wow-header-wrapper">
       <div class="wow-header-inner">
@@ -370,10 +373,6 @@
 
     <!-- STRUTTURA HTML 2: HERO SECTION -->
     <section class="wow-hero-wrapper">
-      <div class="wow-hero-bg">
-        <img class="wow-hero-bg-img" src="https://i.ibb.co/hQj36yv/950289fccfc46014-image-20260919-170824.webp" alt="Luxury Residence Floor Plan">
-        <div class="wow-hero-bg-overlay"></div>
-      </div>
       <div class="wow-hero-inner">
         <div class="wow-hero-badge">
           <span class="wow-hero-badge-dot"></span>
